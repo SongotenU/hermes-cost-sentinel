@@ -1,0 +1,15 @@
+name: cost-sentinel
+version: 1.0.0
+description: "Live cost ledger and daily budget guarddog for every LLM call Hermes makes. Records tokens and USD per API request from observer hooks, prices them with Hermes' own pricing engine, enforces a hard turn-level budget gate, and ships a /cost command, a cost_report tool, and a native Desktop pane with a budget status-bar chip."
+author: "vandopha (SongotenU)"
+license: "MIT"
+requires_hermes: ">=0.21"
+tags: [cost, budget, observability, desktop]
+provides_hooks:
+  - post_api_request
+  - api_request_error
+  - post_auxiliary_call
+  - pre_llm_call
+provides_tools:
+  - cost_report
+python_dependencies: []
